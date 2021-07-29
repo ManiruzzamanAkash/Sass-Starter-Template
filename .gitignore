@@ -1,0 +1,10 @@
+# Dependencies
+/node_modules
+
+# Misc
+.DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
