@@ -5,11 +5,11 @@ A starter kit to use `sass`/`scss` in your HTML project and maintain a scalable 
 ---
 
 ## How can I start
-#### Easy way:
-Just clone the repo and run commands to start
+#### Easy way to integrate scss:
+Just clone the repo and run the following commands to start
 
 ```bash
-git clone 
+git clone https://github.com/ManiruzzamanAkash/Sass-Starter-Template.git
 npm install
 npm start
 ```
@@ -25,7 +25,7 @@ We'll use webpack to make our setup:
 
 Doc Link - https://webpack.js.org/loaders/sass-loader/
 ```bash
-npm i webpack --save-dev
+npm i webpack webpack-cli --save-dev
 ```
 
 
@@ -70,10 +70,22 @@ or, you can check the `package.json`
 #### Create folder - `src`
 
 #### Inside `src`, create two file - 
-`src/scss/app.scss`
-`src/index.js` with this line - `import './scss/app.scss';`
+`src/scss/app.scss` - 
+```scss
+body {
+  background-color: red;
+}
+```
 
-#### Create a webpack.config.js file - 
+`src/index.js` with this line - 
+```js
+import './scss/app.scss';
+```
+
+
+#### Create a `webpack.config.js` file  in root - 
+
+`webpack.config.js`
 
 ```js
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -139,9 +151,46 @@ module.exports = {
 npm start
 ```
 
+And now in your design folder, you can put your HTML code and add the auto-generated CSS, like so,
+
+`design/index.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Scss</title>
+    <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Header Part</h2>
+    </div>
+    <div class="content">
+        <h2>Content Part</h2>
+
+        <div class="home-page">
+            <h3>Home Page</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam reiciendis sit consequatur accusantium repudiandae sequi, rem cupiditate necessitatibus. Molestiae nisi facere iusto et repellendus cumque reprehenderit, modi recusandae tempora. Facilis?</p>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Footer Part</h2>
+    </div>
+</body>
+</html>
+```
+
+Open this `index.html` in browser. And hope, you can get a red background color template.
+
+
+## Check More stuff for scss with real-life data
+
 ### Create some files inside `src/scss/scss`
 
-**Inside src/scss/layouts folder -**
+**Inside `src/scss/layouts` folder -**
 
 `content.scss`
 ```scss
@@ -213,3 +262,8 @@ That's all. Now check, `auto generated css` stored in `dist/css/main.css` and th
 }
 
 ```
+
+Open the `index.html` again in browser. And hope, you can get a dummy-template with integrated CSS.
+
+## Contrinution:
+Yes, you can add some demo HTML page with `scss` designed. Just create Pull-Request and you'll be a contributor of us.
